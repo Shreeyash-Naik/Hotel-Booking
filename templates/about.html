@@ -1,0 +1,20 @@
+{{template "base" .}}
+
+{{define "content"}}
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <h1>This is the ABOUT page</h1>
+            <p>A paragraph to check about</p>
+            <p>Index from data: {{index .Data "test"}}</p>
+            <p>
+                {{ if ne (index .Data "remote_ip") "" }}
+                    Your remote IP address: {{ index .Data "remote_ip" }}
+                {{ else }}
+                    Visit <a href="/home">Home Page</a> to know your IP address.
+                {{ end }}
+            </p>
+        </div>
+    </div>
+</div>
+{{end}}
